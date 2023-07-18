@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html>
+        <head>
+        <title>String Formatter</title>
+    <style>
+        .highlight {
+            text-decoration: underline;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>String Formatter</h1>
+
+<form>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" name="inputString"/>
+    <button type="submit">Format</button>
+</form>
+
+<p id="formattedString"></p>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var inputString = document.getElementById('inputString').value;
+        var formattedString = formatString(inputString);
+
+        document.getElementById('formattedString').innerHTML = formattedString;
+    });
+
+    function formatString(input) {
+        var formatted = '';
+
+        for (var i = 0; i < input.length; i++) {
+            var char = input[i];
+
+            if (!isNaN(char)) {
+                formatted += '<mark class="yellow">' + char + '</mark>';
+
+            } else if (char === char.toUpperCase()) {
+                formatted += '<span class="highlight">' + char + '</span>';
+            } else {
+                formatted += char;
+            }
+        }
+
+        return formatted;
+    }
+</script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
